@@ -14,3 +14,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.white {
+  color: white;
+}
+
+.bg-white {
+  background: white;
+}
+
+.txt-center {
+  text-align: center;
+}
