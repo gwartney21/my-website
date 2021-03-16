@@ -17,7 +17,7 @@ export default function PortfolioNav() {
     <Box className={root} zIndex={10}>
       <Grid container>
         <Grid item>
-          <Box className={links}>
+          <Box tabIndex={0} className={links}>
             <Link href="/portfolio">Home</Link>
           </Box>
         </Grid>

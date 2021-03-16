@@ -132,7 +132,6 @@ export default function PortfolioContactSection({ animate, variants }: Props) {
                           fullWidth
                           id="yourfirstName"
                           label="First Name"
-                          autoFocus
                         />
                       </Grid>
                       <Grid item xs={12} sm={6}>

@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "1.8rem",
     },
     [theme.breakpoints.up("md")]: {
-      fontSize: "3rem",
+      fontSize: "2.1rem",
     },
   },
   textContainer: {
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "1.5rem",
     },
     [theme.breakpoints.up("md")]: {
-      fontSize: "2.6rem",
+      fontSize: "2rem",
     },
   },
   ctaButton: {
