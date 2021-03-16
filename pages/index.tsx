@@ -7,6 +7,7 @@ import { variants } from "../utils/variants";
 import Footer from "../components/Footer";
 import { HomeBackground } from "../components/home-components/HomeBackground";
 import { HomeDesktopNav } from "../components/home-components/HomeDesktopNav";
+import { HomeExperience } from "../components/home-components/HomeExperience";
 
 export default function Home() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -36,6 +37,7 @@ export default function Home() {
       )}
       <HomeHeader />
       <HomeServices variants={variants} />
+      {/* <HomeExperience variants={variants} /> */}
       <Footer />
     </>
   );

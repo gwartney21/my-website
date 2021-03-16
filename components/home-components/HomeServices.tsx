@@ -14,6 +14,7 @@ import {
   Web,
 } from "@material-ui/icons";
 import { AnimationProps, motion } from "framer-motion";
+import { SectionTitle } from "./SectionTitle";
 import { ServicesContainer } from "./ServicesContainer";
 
 const useStyles = makeStyles((theme) => ({
@@ -52,19 +53,6 @@ const useStyles = makeStyles((theme) => ({
       width: "50%",
     },
   },
-  mainTitle: {
-    padding: ".3rem 0",
-    marginTop: "1rem",
-    textShadow: "0 3px 3px #0007",
-    textAlign: "center",
-    boxShadow: "10px 10px 5px #0009",
-
-    background: theme.palette.secondary.main,
-    color: theme.palette.secondary.contrastText,
-    [theme.breakpoints.up("lg")]: {
-      fontSize: "5rem",
-    },
-  },
   secondaryTitle: {
     textAlign: "center",
     borderRadius: ".1rem",
@@ -92,7 +80,6 @@ interface IHomeServicesProps {
 
 export const HomeServices = ({ variants }: IHomeServicesProps) => {
   const {
-    mainTitle,
     secondaryTitle,
     mainContainer,
     mainContainerItem,
@@ -104,11 +91,7 @@ export const HomeServices = ({ variants }: IHomeServicesProps) => {
   } = useStyles();
   return (
     <Box id="services" className={root}>
-      <Box overflow="hidden">
-        <Typography className={mainTitle} variant="h2">
-          Services
-        </Typography>
-      </Box>
+      <SectionTitle text="Services" />
       <Container maxWidth="xl">
         <Grid className={mainContainer} container>
           <Grid className={mainContainerItem} item>

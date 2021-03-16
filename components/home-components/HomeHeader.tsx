@@ -77,6 +77,10 @@ const useStyles = makeStyles((theme) => ({
       "linear-gradient(180deg, #FF2727 0%, rgba(235, 81, 81, 0) 100%)",
     boxShadow: "none",
     borderRadius: 0,
+    [theme.breakpoints.up("md")]: {
+      fontSize: "1.6rem",
+      fontWeight: 300,
+    },
     [theme.breakpoints.up("xl")]: {
       fontSize: "1.8rem",
       fontWeight: 300,
