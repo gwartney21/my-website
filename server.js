@@ -21,6 +21,7 @@ app.prepare().then(() => {
 
   server.post("/api/contact", (req, res) => {
     console.log(req.body);
-    res.send("success");
+    const { firstname, lastname, email, message } = req.body;
+    console.log("Firstname: ", firstname);
   });
 });

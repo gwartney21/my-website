@@ -31,7 +31,7 @@ export const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const submitHandler = (e: any) => {
+  const submitHandler = async (e: any) => {
     e.preventDefault();
 
     const userMessageInfo = {
@@ -40,10 +40,15 @@ export const ContactForm = () => {
       email,
       message,
     };
-    axios
-      .post("http://localhost:3000/api/contact", userMessageInfo)
-      .then(() => router.push("/success"))
-      .catch((err) => console.error(err));
+    try {
+      axios
+        .post("http://localhost:3000/api/contact", userMessageInfo)
+        .then(() => console.log("Submission successful!"))
+        .catch((err) => console.error(err));
+    } catch (err) {
+      throw err;
+    }
+    router.push("/success");
     resetForm();
   };
 

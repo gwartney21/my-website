@@ -8,7 +8,7 @@ export default function Success() {
   useEffect(() => {
     setTimeout(() => {
       router.push("/");
-    }, 1000);
+    }, 1500);
   }, []);
   return (
     <Box
