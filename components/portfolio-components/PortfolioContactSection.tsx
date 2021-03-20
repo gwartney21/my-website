@@ -14,6 +14,7 @@ import {
 } from "@material-ui/core";
 import { GitHub, LinkedIn, Mail, Twitter } from "@material-ui/icons";
 import { AnimationProps, motion } from "framer-motion";
+import { ContactForm } from "../ContactForm";
 
 function Copyright() {
   return (
@@ -64,13 +65,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
-  form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
+
   title: {
     color: "white",
     padding: "10rem 0 0 0",
@@ -114,71 +109,7 @@ export default function PortfolioContactSection({ animate, variants }: Props) {
             <Grid item>
               <Card className={classes.cardForm}>
                 <CardContent>
-                  <form
-                    className={classes.form}
-                    name="contact"
-                    method="POST"
-                    action="/success"
-                    data-netflify="true"
-                  >
-                    <input type="hidden" name="form-name" value="contact" />
-                    <Grid container spacing={2}>
-                      <Grid item xs={12} sm={6}>
-                        <TextField
-                          autoComplete="fname"
-                          name="firstName"
-                          variant="outlined"
-                          required
-                          fullWidth
-                          id="yourfirstName"
-                          label="First Name"
-                        />
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <TextField
-                          variant="outlined"
-                          required
-                          fullWidth
-                          id="lastName"
-                          label="Last Name"
-                          name="yourlastName"
-                          autoComplete="lname"
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <TextField
-                          variant="outlined"
-                          required
-                          fullWidth
-                          id="youremail"
-                          label="Email Address"
-                          name="email"
-                          autoComplete="email"
-                        />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <TextField
-                          variant="outlined"
-                          required
-                          fullWidth
-                          multiline
-                          name="message"
-                          label="Send A Message"
-                          type="text"
-                          id="yourmessage"
-                        />
-                      </Grid>
-                    </Grid>
-                    <Button
-                      type="submit"
-                      fullWidth
-                      variant="contained"
-                      color="primary"
-                      className={classes.submit}
-                    >
-                      Send Message
-                    </Button>
-                  </form>
+                  <ContactForm />
                 </CardContent>
               </Card>
             </Grid>
