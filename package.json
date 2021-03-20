@@ -15,6 +15,7 @@
     "express": "^4.17.1",
     "express-validator": "^6.10.0",
     "framer-motion": "^3.10.3",
+    "mailgun-js": "^0.22.0",
     "next": "10.0.8",
     "nodemailer": "^6.5.0",
     "react": "17.0.1",

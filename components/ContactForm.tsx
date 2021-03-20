@@ -31,25 +31,49 @@ export const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const validate = () => {
+    if (!firstname) {
+      alert("Please enter your first name.");
+      return false;
+    } else if (!lastname) {
+      alert("Please enter your last name.");
+      return false;
+    } else if (!email) {
+      alert("Please enter a valid email.");
+      return false;
+    } else if (!message) {
+      alert(
+        "There is no text in the message field, please type out a reason you would like to get in contact."
+      );
+      return false;
+    } else return true;
+  };
+
   const submitHandler = async (e: any) => {
     e.preventDefault();
 
-    const userMessageInfo = {
-      firstname,
-      lastname,
-      email,
-      message,
-    };
-    try {
-      axios
-        .post("http://localhost:3000/api/contact", userMessageInfo)
-        .then(() => console.log("Submission successful!"))
-        .catch((err) => console.error(err));
-    } catch (err) {
-      throw err;
+    const validated = validate();
+
+    if (validated) {
+      const userMessageInfo = {
+        firstname,
+        lastname,
+        email,
+        message,
+      };
+      try {
+        axios
+          .post("http://localhost:3000/api/contact", userMessageInfo)
+          .then(() => console.log("Submission successful!"))
+          .catch((err) => console.error(err));
+      } catch (err) {
+        throw err;
+      }
+      router.push("/success");
+      resetForm();
+    } else {
+      console.error("A field is either missing or invalid.");
     }
-    router.push("/success");
-    resetForm();
   };
 
   const resetForm = () => {
