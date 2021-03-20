@@ -20,7 +20,7 @@ export default function Success() {
     >
       <motion.div
         initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
         onLoad
         animate={{ opacity: 1, y: 0 }}
       >
