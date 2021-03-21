@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 import { useMediaQuery } from "@material-ui/core";
 import HomeHeader from "../components/home-components/HomeHeader";
@@ -7,7 +8,6 @@ import { variants } from "../utils/variants";
 import Footer from "../components/Footer";
 import { HomeBackground } from "../components/home-components/HomeBackground";
 import { HomeDesktopNav } from "../components/home-components/HomeDesktopNav";
-import { HomeExperience } from "../components/home-components/HomeExperience";
 
 export default function Home() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -25,6 +25,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>MadeUnlinked | Web Development</title>
+      </Head>
       <HomeBackground />
       {desktop ? (
         <HomeDesktopNav current={current} />
@@ -37,7 +40,6 @@ export default function Home() {
       )}
       <HomeHeader />
       <HomeServices variants={variants} />
-      {/* <HomeExperience variants={variants} /> */}
       <Footer />
     </>
   );

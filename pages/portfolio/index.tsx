@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import { makeStyles, useMediaQuery, Box } from "@material-ui/core";
 import { useViewportScroll } from "framer-motion";
@@ -76,28 +77,33 @@ export default function Portfolio() {
   const current = "portfolio";
 
   return (
-    <Box className={classes.bg}>
-      <BackgroundEarth animate={scrollY.get()} />
+    <>
+      <Head>
+        <title>Benjamin Scott | React Web Developer</title>
+      </Head>
+      <Box className={classes.bg}>
+        <BackgroundEarth animate={scrollY.get()} />
 
-      {pixels550 ? (
-        <HomeMobileNav
-          open={drawerOpen}
-          drawerOpenHandler={drawerOpenHandler}
-          drawerCloseHandler={drawerCloseHandler}
-        />
-      ) : (
-        <HomeDesktopNav current={current} />
-      )}
+        {pixels550 ? (
+          <HomeMobileNav
+            open={drawerOpen}
+            drawerOpenHandler={drawerOpenHandler}
+            drawerCloseHandler={drawerCloseHandler}
+          />
+        ) : (
+          <HomeDesktopNav current={current} />
+        )}
 
-      <Header />
+        <Header />
 
-      <Projects animate={animateProjects} variants={variants} />
+        <Projects animate={animateProjects} variants={variants} />
 
-      <About animate={animateAbout} variants={variants} />
+        <About animate={animateAbout} variants={variants} />
 
-      <Contact animate={animateContact} variants={variants} />
+        <Contact animate={animateContact} variants={variants} />
 
-      <Footer />
-    </Box>
+        <Footer />
+      </Box>
+    </>
   );
 }

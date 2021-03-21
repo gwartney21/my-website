@@ -20,7 +20,14 @@ export default function MyApp(props) {
   return (
     <React.Fragment>
       <Head>
-        <title>Benjamin Scott | A React.js Web Developer</title>
+        <meta
+          name="description"
+          content="MadeUnlinked is a web based company designed around customer satisfaction and product perfection. We build highly customized websites and applications suited for whatever the need may be."
+        />
+        <meta
+          name="keywords"
+          content="HTML, CSS, JavaScript, websites, web, react, react.js, next.js, wordpress, tech, web development, programming, web design, Benjamin Scott, code, coding, mentor, mentorship"
+        />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="stylesheet"

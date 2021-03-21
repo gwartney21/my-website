@@ -32,7 +32,6 @@ interface BgEarth {
 }
 
 export default function BackgroundEarth({ animate }: BgEarth) {
-  console.log(animate);
   return (
     <Canvas
       style={{
