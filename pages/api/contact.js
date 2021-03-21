@@ -1,12 +1,12 @@
 import mailgun from "mailgun-js";
-const DOMAIN = "sandbox25ae9a39df8645f18d8c0ff50525e28a.mailgun.org";
-const mg = mailgun({
-  apiKey: process.env.MAILGUN_API_KEY,
-  domain: DOMAIN,
-});
 
 export default function handler(req, res) {
   if (req.method === "POST") {
+    const DOMAIN = "sandbox25ae9a39df8645f18d8c0ff50525e28a.mailgun.org";
+    const mg = mailgun({
+      apiKey: process.env.MAILGUN_API_KEY,
+      domain: DOMAIN,
+    });
     console.log(req.body);
     const { firstname, lastname, email, message } = req.body;
 
