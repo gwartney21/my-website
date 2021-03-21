@@ -2,6 +2,7 @@ import mailgun from "mailgun-js";
 
 export default function handler(req, res) {
   if (req.method === "POST") {
+    res.set("Access-Control-Allow-Origin", "*");
     const DOMAIN = "sandbox25ae9a39df8645f18d8c0ff50525e28a.mailgun.org";
     const mg = mailgun({
       apiKey: process.env.MAILGUN_API_KEY,
@@ -22,7 +23,7 @@ export default function handler(req, res) {
           `,
     };
     mg.messages().send(data, function (error, body) {
-      if (error) throw error;
+      if (error) throw new Error(error);
     });
   }
 }
